@@ -72,3 +72,5 @@ tsc:
           name: 'CNTT-RI -> CIRV'
           link: 'http://ircbot.wl.linuxfoundation.org/meetings/opnfv-meeting/2019/opnfv-meeting.2019-10-29-13.00.log.html'
           # yamllint enable rule:line-length
+
+# Dummy commit to show how this works.
