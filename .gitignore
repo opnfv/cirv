@@ -1,0 +1,12 @@
+*.pyc
+*.log
+.project
+.pydevproject
+nosetests.xml
+coverage.xml
+.coverage
+cover
+.settings
+docs_output
+.tox
+docs/_build/*
