@@ -48,7 +48,7 @@ class Settings(object):
 
     def _eval_param(self, param):
         # pylint: disable=invalid-name
-        """ Helper function for expansion of references to vsperf parameters
+        """ Helper function for expansion of references to 'valid' parameters
         """
         if isinstance(param, str):
             # evaluate every #PARAM reference inside parameter itself
