@@ -38,7 +38,7 @@ LOG_FILE_PREFIX="/tmp/cirv_build"
 DATE=$(date -u +"%Y-%m-%d_%H-%M-%S")
 BRANCH=${GIT_BRANCH##*/}
 CIRVENV_DIR="$HOME/cirvenv"
-WORKSPACE="./"
+# WORKSPACE="./"
 
 #
 # main
