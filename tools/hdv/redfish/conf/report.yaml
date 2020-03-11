@@ -1,0 +1,770 @@
+- SN: 1
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+  case_num: 7.1.1 set asset code
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{"AssetTag": "CM_cc@1234"}'
+  final_result: Failure
+  group: 7.1 asset managment
+  header: null
+  method: PATCH
+  request_body: '{"AssetTag": "CM_cc@1234"}'
+- SN: 2
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+  case_num: 7.1.2 get asset code
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''AssetTag'': ''Success''}]}'
+  expected_code: 200
+  expected_result: '{"AssetTag": "CM_cc@1234"}'
+  final_result: Success
+  group: 7.1 asset managment
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 3
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+  case_num: 7.1.3 set host name
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{"HostName": "NFV-RPZJHZ-01B"}'
+  final_result: Failure
+  group: 7.1 asset managment
+  header: null
+  method: PATCH
+  request_body: '{"HostName": "NFV-RPZJHZ-01B"}'
+- SN: 4
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+  case_num: 7.1.4 get host name
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''HostName'': "Failure, expect value: NFV-RPZJHZ-01B, return value:
+    Can''t find the key HostName in return value"}]}'
+  expected_code: 200
+  expected_result: '{"HostName": "NFV-RPZJHZ-01B"}'
+  final_result: Failure
+  group: 7.1 asset managment
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 5
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+  case_num: 7.1.5 get manufacturer
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''Manufacturer'': ''Failure, expect value: New H3C Technologies Co.,
+    Ltd., return value: Huawei''}]}'
+  expected_code: 200
+  expected_result: '{"Manufacturer": "New H3C Technologies Co., Ltd."}'
+  final_result: Failure
+  group: 7.1 asset managment
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 6
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+  case_num: 7.1.6 get model
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''Model'': ''Failure, expect value: UniServer R4900 G3, return value:
+    RH2288H V3''}]}'
+  expected_code: 200
+  expected_result: '{"Model": "UniServer R4900 G3"}'
+  final_result: Failure
+  group: 7.1 asset managment
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 7
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+  case_num: 7.1.7 get serial number
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''SerialNumber'': ''Success''}]}'
+  expected_code: 200
+  expected_result: '{"SerialNumber": "N/A"}'
+  final_result: Success
+  group: 7.1 asset managment
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 8
+  URL: https://{bmc_ip}/redfish/v1/Chassis/{chassis_id}
+  case_num: 7.1.8  get main board
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''Oem'': "Failure, expect value: {''Mainboard'': {''BoardName'':
+    ''RS33M2C9S''}}, return value: Can''t find the key Oem in return value"}]}'
+  expected_code: 200
+  expected_result: '{"Oem":{"Mainboard": {"BoardName": "RS33M2C9S"}}}'
+  final_result: Failure
+  group: 7.1 asset managment
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 9
+  URL: https://{bmc_ip}/redfish/v1/Chassis/{chassis_id}
+  case_num: 7.1.9 get main board serial number
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''Oem'': "Failure, expect value: {''Mainboard'': {''SerialNumber'':
+    ''N/A''}}, return value: Can''t find the key Oem in return value"}]}'
+  expected_code: 200
+  expected_result: '{"Oem": {"Mainboard": {"SerialNumber": "N/A"}}}'
+  final_result: Failure
+  group: 7.1 asset managment
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 10
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+  case_num: 7.1.10 get BIOS version
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''BiosVersion'': ''Failure, expect value: 2.00.35P01 V100R001B02D035SP01,
+    return value: 3.63''}]}'
+  expected_code: 200
+  expected_result: '{"BiosVersion": "2.00.35P01 V100R001B02D035SP01"}'
+  final_result: Failure
+  group: 7.1 asset managment
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 11
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Processors
+  case_num: 7.2.1 get CPU amount
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''Members@odata.count'': ''Success''}]}'
+  expected_code: 200
+  expected_result: '{"Members@odata.count": 2}'
+  final_result: Success
+  group: 7.2 compoment management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 12
+  URL: https://{bmc_ip}{cpu_id}
+  case_num: 7.2.2 get CPU amount
+  details_result: '{''count'': ''Success'', ''info'': [{''return_code'': ''Success'',
+    ''Manufacturer'': ''Success'', ''MaxSpeedMHz'': ''Failure, expect value: 2300,
+    return value: 3500'', ''Model'': ''Failure, expect value: Intel(R) Xeon(R) Gold
+    5218N CPU @ 2.30GHz, return value: Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz'',
+    ''ProcessorArchitecture'': ''Success'', ''Socket'': ''Failure, expect value: [1,
+    2], return value: 0'', ''Status'': {''Health'': ''Success'', ''State'': ''Success''},
+    ''TotalCores'': ''Failure, expect value: 16, return value: 8'', ''TotalThreads'':
+    ''Failure, expect value: 32, return value: 16''}, {''return_code'': ''Success'',
+    ''Manufacturer'': ''Success'', ''MaxSpeedMHz'': ''Failure, expect value: 2300,
+    return value: 3500'', ''Model'': ''Failure, expect value: Intel(R) Xeon(R) Gold
+    5218N CPU @ 2.30GHz, return value: Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz'',
+    ''ProcessorArchitecture'': ''Success'', ''Socket'': ''Success'', ''Status'': {''Health'':
+    ''Success'', ''State'': ''Success''}, ''TotalCores'': ''Failure, expect value:
+    16, return value: 8'', ''TotalThreads'': ''Failure, expect value: 32, return value:
+    16''}]}'
+  expected_code: 200
+  expected_result: '{    "count": 2,    "Manufacturer": "Intel(R) Corporation",    "MaxSpeedMHz":
+    2300,    "Model": "Intel(R) Xeon(R) Gold 5218N CPU @ 2.30GHz",    "ProcessorArchitecture":
+    ["x86", "IA-64", "ARM", "MIPS", "OEM"],    "Socket": [1, 2],    "Status": {        "Health":
+    "OK",        "State": "Enabled"    },    "TotalCores": 16,    "TotalThreads":
+    32}'
+  final_result: Failure
+  group: 7.2 compoment management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200, 200]'
+- SN: 13
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Memory
+  case_num: 7.2.3 get  memory mount
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''Members@odata.count'': ''Failure, expect value: 12, return value:
+    4''}]}'
+  expected_code: 200
+  expected_result: '{"Members@odata.count": 12}'
+  final_result: Failure
+  group: 7.2 compoment management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 14
+  URL: https://{bmc_ip}{memory_id}
+  case_num: 7.2.4 get memory information
+  details_result: '{''count'': ''Failure, the actual num is 4'', ''info'': [{''return_code'':
+    ''Success'', ''BaseModuleType'': "Failure, expect value: RDIMM, return value:
+    Can''t find the key BaseModuleType in return value", ''CapacityMiB'': ''Success'',
+    ''DeviceLocator'': ''Success'', ''Manufacturer'': ''Success'', ''MemoryDeviceType'':
+    ''Success'', ''OperatingSpeedMhz'': ''Failure, expect value: 2666, return value:
+    2400'', ''PartNumber'': "Failure, expect value: [''HMA84GR7AFR4N-VK'', ''36ASF4G72PZ-2G6D1''],
+    return value: Can''t find the key PartNumber in return value", ''Status'': {''Health'':
+    ''Success'', ''State'': ''Success''}}, {''return_code'': ''Success'', ''BaseModuleType'':
+    "Failure, expect value: RDIMM, return value: Can''t find the key BaseModuleType
+    in return value", ''CapacityMiB'': ''Success'', ''DeviceLocator'': ''Success'',
+    ''Manufacturer'': ''Success'', ''MemoryDeviceType'': ''Success'', ''OperatingSpeedMhz'':
+    ''Failure, expect value: 2666, return value: 2400'', ''PartNumber'': "Failure,
+    expect value: [''HMA84GR7AFR4N-VK'', ''36ASF4G72PZ-2G6D1''], return value: Can''t
+    find the key PartNumber in return value", ''Status'': {''Health'': ''Success'',
+    ''State'': ''Success''}}, {''return_code'': ''Success'', ''BaseModuleType'': "Failure,
+    expect value: RDIMM, return value: Can''t find the key BaseModuleType in return
+    value", ''CapacityMiB'': ''Success'', ''DeviceLocator'': ''Success'', ''Manufacturer'':
+    ''Success'', ''MemoryDeviceType'': ''Success'', ''OperatingSpeedMhz'': ''Failure,
+    expect value: 2666, return value: 2400'', ''PartNumber'': "Failure, expect value:
+    [''HMA84GR7AFR4N-VK'', ''36ASF4G72PZ-2G6D1''], return value: Can''t find the key
+    PartNumber in return value", ''Status'': {''Health'': ''Success'', ''State'':
+    ''Success''}}, {''return_code'': ''Success'', ''BaseModuleType'': "Failure, expect
+    value: RDIMM, return value: Can''t find the key BaseModuleType in return value",
+    ''CapacityMiB'': ''Success'', ''DeviceLocator'': ''Success'', ''Manufacturer'':
+    ''Success'', ''MemoryDeviceType'': ''Success'', ''OperatingSpeedMhz'': ''Failure,
+    expect value: 2666, return value: 2400'', ''PartNumber'': "Failure, expect value:
+    [''HMA84GR7AFR4N-VK'', ''36ASF4G72PZ-2G6D1''], return value: Can''t find the key
+    PartNumber in return value", ''Status'': {''Health'': ''Success'', ''State'':
+    ''Success''}}]}'
+  expected_code: 200
+  expected_result: '{    "count": 12,    "BaseModuleType": "RDIMM",    "CapacityMiB":
+    32768,    "DeviceLocator": "N/A",    "Manufacturer": ["Hynix Semiconductor", "Micron"],    "MemoryDeviceType":
+    "DDR4",    "OperatingSpeedMhz": 2666,    "PartNumber": ["HMA84GR7AFR4N-VK","36ASF4G72PZ-2G6D1"],    "Status":
+    {        "Health": "OK",        "State": "Enabled"    }}'
+  final_result: Failure
+  group: 7.2 compoment management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200, 200, 200, 200]'
+- SN: 15
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Storages
+  case_num: 7.2.5-1 get raid information
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''Members@odata.count'': ''Success''}]}'
+  expected_code: 200
+  expected_result: '{"Members@odata.count": 1}'
+  final_result: Success
+  group: 7.2 compoment management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 16
+  URL: https://{bmc_ip}{storage_id}
+  case_num: 7.2.5-2 get raid card information
+  details_result: '{''count'': ''Success'', ''info'': [{''return_code'': ''Success'',
+    ''StorageControllers'': [{''FirmwareVersion'': ''2.62'', ''Manufacturer'': ''H3C'',
+    ''Model'': ''N/A'', ''Status'': {''Health'': ''Success'', ''State'': ''Success''}}]}]}'
+  expected_code: 200
+  expected_result: '{    "count": 1,    "StorageControllers": [        {            "FirmwareVersion":
+    "2.62",            "Manufacturer": "H3C",            "Model": "N/A",            "Status":
+    {                "Health": "OK",                "State": "Enabled"            }        }    ]}'
+  final_result: Success
+  group: 7.2 compoment management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 17
+  URL: https://{bmc_ip}{drives_id}
+  case_num: 7.2.6 get harddisk information
+  details_result: '{''count'': ''Failure, the actual num is 6'', ''info'': [{''return_code'':
+    ''Success'', ''CapacityBytes'': ''Failure, expect value: [480102187008, 960193626112],
+    return value: None'', ''Location'': {''Info'': ''N/A'', ''InfoFormat'': ''DeviceName''},
+    ''Manufacturer'': ''ATA'', ''MediaType'': ''SSD'', ''Model'': "Failure, expect
+    value: [''INTEL SSDSC2KB48'', ''INTEL SSDSC2KB96''], return value: None", ''Protocol'':
+    ''Success'', ''Status'': {''Health'': ''Success'', ''State'': ''Enabled''}}, {''return_code'':
+    ''Success'', ''CapacityBytes'': ''Failure, expect value: [480102187008, 960193626112],
+    return value: None'', ''Location'': {''Info'': ''N/A'', ''InfoFormat'': ''DeviceName''},
+    ''Manufacturer'': ''ATA'', ''MediaType'': ''SSD'', ''Model'': "Failure, expect
+    value: [''INTEL SSDSC2KB48'', ''INTEL SSDSC2KB96''], return value: None", ''Protocol'':
+    ''Success'', ''Status'': {''Health'': ''Success'', ''State'': ''Enabled''}}, {''return_code'':
+    ''Success'', ''CapacityBytes'': ''Failure, expect value: [480102187008, 960193626112],
+    return value: None'', ''Location'': {''Info'': ''N/A'', ''InfoFormat'': ''DeviceName''},
+    ''Manufacturer'': ''ATA'', ''MediaType'': ''SSD'', ''Model'': "Failure, expect
+    value: [''INTEL SSDSC2KB48'', ''INTEL SSDSC2KB96''], return value: None", ''Protocol'':
+    ''Success'', ''Status'': {''Health'': ''Success'', ''State'': ''Enabled''}}, {''return_code'':
+    ''Success'', ''CapacityBytes'': ''Failure, expect value: [480102187008, 960193626112],
+    return value: None'', ''Location'': {''Info'': ''N/A'', ''InfoFormat'': ''DeviceName''},
+    ''Manufacturer'': ''ATA'', ''MediaType'': ''SSD'', ''Model'': "Failure, expect
+    value: [''INTEL SSDSC2KB48'', ''INTEL SSDSC2KB96''], return value: None", ''Protocol'':
+    ''Success'', ''Status'': {''Health'': ''Success'', ''State'': ''Enabled''}}, {''return_code'':
+    ''Success'', ''CapacityBytes'': ''Failure, expect value: [480102187008, 960193626112],
+    return value: None'', ''Location'': {''Info'': ''N/A'', ''InfoFormat'': ''DeviceName''},
+    ''Manufacturer'': ''ATA'', ''MediaType'': ''SSD'', ''Model'': "Failure, expect
+    value: [''INTEL SSDSC2KB48'', ''INTEL SSDSC2KB96''], return value: None", ''Protocol'':
+    ''Success'', ''Status'': {''Health'': ''Success'', ''State'': ''Enabled''}}, {''return_code'':
+    ''Success'', ''CapacityBytes'': ''Failure, expect value: [480102187008, 960193626112],
+    return value: None'', ''Location'': {''Info'': ''N/A'', ''InfoFormat'': ''DeviceName''},
+    ''Manufacturer'': ''ATA'', ''MediaType'': ''SSD'', ''Model'': "Failure, expect
+    value: [''INTEL SSDSC2KB48'', ''INTEL SSDSC2KB96''], return value: None", ''Protocol'':
+    ''Success'', ''Status'': {''Health'': ''Success'', ''State'': ''Enabled''}}]}'
+  expected_code: 200
+  expected_result: '{    "count": 4,    "CapacityBytes": [480102187008, 960193626112],    "Location":
+    {        "Info": "N/A",        "InfoFormat": "DeviceName"    },    "Manufacturer":
+    "ATA",    "MediaType": "SSD",    "Model": ["INTEL SSDSC2KB48", "INTEL SSDSC2KB96"],    "Protocol":
+    "SATA",    "Status": {        "Health": "OK",        "State": "Enabled"    }}'
+  final_result: Failure
+  group: 7.2 compoment management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200, 200, 200, 200, 200, 200]'
+- SN: 18
+  URL: https://{bmc_ip}{networkadapters_id}
+  case_num: 7.2.7 get network interface adapter information
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{   "count": 3,    "Manufacturer": "Mellanox",    "Model": "NIC-620F-B2-25Gb-2P-1-X",    "Name":
+    ["PCIeSlot2", "PCIeSlot3", "PCIeSlot6"],    "Oem": {        "Public": {            "CardModel":
+    "2*25GE",            "RootBDF": ["0000:17:00.0", "0000:17:02.0", "0000:AE:02.0"],        }    },    "Status":
+    {        "Health": "OK",        "State": "Enabled"    }}'
+  final_result: Failure
+  group: 7.2 compoment management
+  header: null
+  method: GET
+  request_body: null
+- SN: 19
+  URL: https://{bmc_ip}{networkports_id}
+  case_num: 7.2.8 get network interface adapter port information
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{    "count": 6,    "AssociatedNetworkAddresses": [        "N/A"    ],    "Oem":
+    {        "Public": {            "BDF": "N/A",            "PortType": "OpticalPort"        }    },    "PhysicalPortNumber":
+    ["1", "2"]}'
+  final_result: Failure
+  group: 7.2 compoment management
+  header: null
+  method: GET
+  request_body: null
+- SN: 20
+  URL: https://{bmc_ip}/redfish/v1/Chassis/{chassis_id}/Thermal
+  case_num: 7.2.9 get fans information
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''FanSummary'': "Failure, expect value: {''Count'': 6}, return value:
+    Can''t find the key FanSummary in return value", ''Fans'': [{''MemberId'': ''Success'',
+    ''Oem'': {''Public'': {''SpeedRatio'': ''N/A''}}, ''Status'': {''Health'': ''Success'',
+    ''State'': ''Success''}}, {''MemberId'': ''Success'', ''Oem'': {''Public'': {''SpeedRatio'':
+    ''N/A''}}, ''Status'': {''Health'': ''Success'', ''State'': ''Success''}}, {''MemberId'':
+    ''Success'', ''Oem'': {''Public'': {''SpeedRatio'': ''N/A''}}, ''Status'': {''Health'':
+    ''Success'', ''State'': ''Success''}}, {''MemberId'': ''Success'', ''Oem'': {''Public'':
+    {''SpeedRatio'': ''N/A''}}, ''Status'': {''Health'': ''Success'', ''State'': ''Success''}},
+    {''MemberId'': ''Success'', ''Oem'': {''Public'': {''SpeedRatio'': ''N/A''}},
+    ''Status'': {''Health'': ''Success'', ''State'': ''Success''}}, {''MemberId'':
+    ''Success'', ''Oem'': {''Public'': {''SpeedRatio'': ''N/A''}}, ''Status'': {''Health'':
+    ''Success'', ''State'': ''Success''}}]}]}'
+  expected_code: 200
+  expected_result: '{    "FanSummary": {        "Count": 6    },    "Fans": [        {            "MemberId":
+    "N/A",            "Oem": {                "Public": {                    "SpeedRatio":
+    "N/A"                }            },            "Status": {                "Health":
+    "OK",                "State": "Enabled"            }        },        {            "MemberId":
+    "N/A",            "Oem": {                "Public": {                    "SpeedRatio":
+    "N/A"                }            },            "Status": {                "Health":
+    "OK",                "State": "Enabled"            }        },{            "MemberId":
+    "N/A",            "Oem": {                "Public": {                    "SpeedRatio":
+    "N/A"                }            },            "Status": {                "Health":
+    "OK",                "State": "Enabled"            }        },{            "MemberId":
+    "N/A",            "Oem": {                "Public": {                    "SpeedRatio":
+    "N/A"                }            },            "Status": {                "Health":
+    "OK",                "State": "Enabled"            }        },{            "MemberId":
+    "N/A",            "Oem": {                "Public": {                    "SpeedRatio":
+    "N/A"                }            },            "Status": {                "Health":
+    "OK",                "State": "Enabled"            }        },{            "MemberId":
+    "N/A",            "Oem": {                "Public": {                    "SpeedRatio":
+    "N/A"                }            },            "Status": {                "Health":
+    "OK",                "State": "Enabled"            }        }    ],}'
+  final_result: Failure
+  group: 7.2 compoment management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 21
+  URL: https://{bmc_ip}/redfish/v1/Chassis/{chassis_id}
+  case_num: 7.2.10 get power amount
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''DeviceMaxNum'': "Failure, expect value: {''PowerSupplyNum'': 2},
+    return value: Can''t find the key DeviceMaxNum in return value"}]}'
+  expected_code: 200
+  expected_result: '{ "DeviceMaxNum": {    "PowerSupplyNum": 2},}'
+  final_result: Failure
+  group: 7.2 compoment management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 22
+  URL: https://{bmc_ip}/redfish/v1/Chassis/{chassis_id}/Power
+  case_num: 7.2.11 get power info
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''PowerControl'': [{''PowerConsumedWatts'': ''Success'', ''Status'':
+    {''Health'': ''OK'', ''State'': ''Enabled''}}], ''PowerSupplies'': [{''LineInputVoltage'':
+    ''Success'', ''MemberId'': ''Failure, expect value: 1, return value: 0'', ''PowerCapacityWatts'':
+    ''Failure, expect value: 800, return value: 460'', ''Status'': {''Health'': ''Success'',
+    ''State'': ''Success''}}, {''LineInputVoltage'': ''Success'', ''MemberId'': ''Failure,
+    expect value: 2, return value: 1'', ''PowerCapacityWatts'': ''Failure, expect
+    value: 800, return value: 460'', ''Status'': {''Health'': ''Failure, expect value:
+    OK, return value: Critical'', ''State'': ''Success''}}]}]}'
+  expected_code: 200
+  expected_result: '{    "PowerControl": [        {            "PowerConsumedWatts":
+    "N/A","Status":{                "Health": "OK",                "State": "Enabled"            }        },    ],    "PowerSupplies":
+    [        {            "LineInputVoltage": "N/A",            "MemberId": "1",            "PowerCapacityWatts":
+    800,"Status": {                "Health": "OK",                "State": "Enabled"            }        },        {            "LineInputVoltage":
+    "N/A",            "MemberId": "2",            "PowerCapacityWatts": 800,"Status":
+    {                "Health": "OK",                "State": "Enabled"            }        }    ],}'
+  final_result: Failure
+  group: 7.2 compoment management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 23
+  URL: https://{bmc_ip}{volume_id}
+  case_num: 7.2.12 get logical dirve health status
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{    "count": 2,    "Name": "N/A",    "Status": {        "Health":
+    ["OK", "Critical"],        "State": "Enabled"    }}'
+  final_result: Failure
+  group: 7.2 compoment management
+  header: null
+  method: GET
+  request_body: null
+- SN: 24
+  URL: https://{bmc_ip}/redfish/v1/Chassis/{chassis_id}/Thermal
+  case_num: 7.3.1 get server temperature air intake
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''Temperatures'': [{''Name'': ''Failure, expect value: INPUT_TEMP,
+    return value: Inlet Temp'', ''ReadingCelsius'': ''Success''}]}]}'
+  expected_code: 200
+  expected_result: '{    "Temperatures": [        {            "Name": "INPUT_TEMP",            "ReadingCelsius":
+    "N/A",        }    ]}'
+  final_result: Failure
+  group: 7.3 sensor management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 25
+  URL: https://{bmc_ip}/redfish/v1/Chassis/{chassis_id}/Thermal
+  case_num: 7.3.2 get cpu temperature
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''Temperatures'': [{''Name'': ''Failure, expect value: INPUT_TEMP,
+    return value: Inlet Temp'', ''ReadingCelsius'': ''Success''}, {''Name'': ''Failure,
+    expect value: CPU1_TEMP, return value: Outlet Temp'', ''ReadingCelsius'': ''Success''},
+    {''Name'': ''Failure, expect value: CPU2_TEMP, return value: PCH Temp'', ''ReadingCelsius'':
+    ''N/A''}]}]}'
+  expected_code: 200
+  expected_result: '{    "Temperatures": [        {            "Name": "INPUT_TEMP",            "ReadingCelsius":
+    "N/A",        },        {            "Name": "CPU1_TEMP",            "ReadingCelsius":
+    "N/A",        },        {            "Name": "CPU2_TEMP",            "ReadingCelsius":
+    "N/A",        },        ]}'
+  final_result: Failure
+  group: null
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 26
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+  case_num: 7.4.1 get server power state
+  details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
+    ''Success'', ''PowerState'': ''Failure, expect value: On, return value: Off''}]}'
+  expected_code: 200
+  expected_result: '{"PowerState": "On"}'
+  final_result: Failure
+  group: 7.4 power management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 27
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Actions/ComputerSystem.Reset
+  case_num: 7.4.2 remote power on server
+  details_result: '{''count'': ''N/A for this case'', ''info'': []}'
+  expected_code: 200
+  expected_result: '{"error":{"@Message.ExtendedInfo": [{"Message": "Successfully
+    Completed Request", "Severity":"OK"}]}}'
+  final_result: Success
+  group: 7.3 sensor management
+  header: null
+  method: POST
+  request_body: '{"ResetType": "On"}'
+  return_code_seq: '[]'
+- SN: 28
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Actions/ComputerSystem.Reset
+  case_num: 7.4.3 remote power off server
+  details_result: '{''count'': ''N/A for this case'', ''info'': []}'
+  expected_code: 200
+  expected_result: '{"error":{"@Message.ExtendedInfo": [{"Message": "Successfully
+    Completed Request", "Severity":"OK"}]}}'
+  final_result: Success
+  group: 7.3 sensor management
+  header: null
+  method: POST
+  request_body: '{"ResetType": "GracefulShutdown"}'
+  return_code_seq: '[]'
+- SN: 29
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Actions/ComputerSystem.Reset
+  case_num: 7.4.4 remote reset server
+  details_result: '{''count'': ''N/A for this case'', ''info'': []}'
+  expected_code: 200
+  expected_result: '{"error":{"@Message.ExtendedInfo": [{"Message": "Successfully
+    Completed Request", "Severity":"OK"}]}}'
+  final_result: Success
+  group: 7.3 sensor management
+  header: null
+  method: POST
+  request_body: '{"ResetType": "ForceRestart"}'
+  return_code_seq: '[]'
+- SN: 30
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios/Settings
+  case_num: 7.7.1-1 remote configure CPU in hyperthreading
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{"Attributes": {"ProcessorHyperThreading": "Disabled"}}'
+  final_result: Failure
+  group: 7.7 remote configure
+  header: null
+  method: PATCH
+  request_body: '{  "Attributes":    {    "ProcessorHyperThreading": "Disabled"    }}'
+- SN: 31
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios
+  case_num: 7.7.1-2 remote get CPU hyperthreading model information
+  details_result: '{''count'': ''N/A for this case'', ''info'': []}'
+  expected_code: 200
+  expected_result: '{"Attributes": {"ProcessorHyperThreading": "Disabled"}}'
+  final_result: Success
+  group: 7.7 remote configure
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[]'
+- SN: 32
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios/Settings
+  case_num: 7.7.1-1 remote configure CPU in hyperthreading
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{"Attributes": {"ProcessorHyperThreading": "Enabled"}}'
+  final_result: Failure
+  group: 7.7 remote configure
+  header: null
+  method: PATCH
+  request_body: '{  "Attributes":    {    "ProcessorHyperThreading": "Enabled"    }}'
+- SN: 33
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios
+  case_num: 7.7.1-1 remote configure CPU in hyperthreading
+  details_result: '{''count'': ''N/A for this case'', ''info'': []}'
+  expected_code: 200
+  expected_result: '{"Attributes": {"ProcessorHyperThreading": "Enabled"}}'
+  final_result: Success
+  group: 7.7 remote configure
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[]'
+- SN: 34
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios/Settings
+  case_num: 7.7.2-1 disable PXE mode
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{  "Attributes":    {    "IPv4PXESupport": "Disabled"    }}'
+  final_result: Failure
+  group: 7.7 remote configure
+  header: null
+  method: PATCH
+  request_body: '{  "Attributes":    {    "IPv4PXESupport": "Disabled"    }}'
+- SN: 35
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios
+  case_num: 7.7.2-2 check PXE mode settings
+  details_result: '{''count'': ''N/A for this case'', ''info'': []}'
+  expected_code: 200
+  expected_result: '{  "Attributes":    {    "IPv4PXESupport": "Disabled"    }}'
+  final_result: Success
+  group: 7.7 remote configure
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[]'
+- SN: 36
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios/Settings
+  case_num: 7.7.2-3 enable PXE mode
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{  "Attributes":    {    "IPv4PXESupport": "Enabled"    }}'
+  final_result: Failure
+  group: 7.7 remote configure
+  header: null
+  method: PATCH
+  request_body: '{  "Attributes":    {    "IPv4PXESupport": "Enabled"    }}'
+- SN: 37
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios
+  case_num: 7.7.2-4 check PXE mode
+  details_result: '{''count'': ''N/A for this case'', ''info'': []}'
+  expected_code: 200
+  expected_result: '{  "Attributes":    {    "IPv4PXESupport": "Enabled"    }}'
+  final_result: Success
+  group: 7.7 remote configure
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[]'
+- SN: 38
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios/Settings
+  case_num: 7.7.3 set boot type order
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{    "Attributes":        {            "BootTypeOrder0": "HardDiskDrive",            "BootTypeOrder1":
+    "DVDROMDrive",            "BootTypeOrder2": "PXE",            "BootTypeOrder3":
+    "Others",        }}'
+  final_result: Failure
+  group: 7.7 remote interface management
+  header: null
+  method: PATCH
+  request_body: '{    "Attributes":        {            "BootTypeOrder0": "HardDiskDrive",            "BootTypeOrder1":
+    "DVDROMDrive",            "BootTypeOrder2": "PXE",            "BootTypeOrder3":
+    "Others",        }}'
+- SN: 39
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios
+  case_num: 7.7.3 check boot order
+  details_result: '{''count'': ''N/A for this case'', ''info'': []}'
+  expected_code: 200
+  expected_result: '{    "Attributes":        {            "BootTypeOrder0": "HardDiskDrive",            "BootTypeOrder1":
+    "DVDROMDrive",            "BootTypeOrder2": "PXE",            "BootTypeOrder3":
+    "Others",        }}'
+  final_result: Success
+  group: 7.7 remote interface management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[]'
+- SN: 40
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios/Settings
+  case_num: 7.7.3 configure boot order
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{    "Attributes":        {            "BootTypeOrder0": "DVDROMDrive",            "BootTypeOrder1":
+    "HardDiskDrive",            "BootTypeOrder2": "Others",            "BootTypeOrder3":
+    "PXE",        }}'
+  final_result: Failure
+  group: 7.7 remote interface management
+  header: null
+  method: PATCH
+  request_body: '{    "Attributes":        {            "BootTypeOrder0": "DVDROMDrive",            "BootTypeOrder1":
+    "HardDiskDrive",            "BootTypeOrder2": "Others",            "BootTypeOrder3":
+    "PXE",        }}'
+- SN: 41
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios
+  case_num: 7.7.3 check boot order
+  details_result: '{''count'': ''N/A for this case'', ''info'': []}'
+  expected_code: 200
+  expected_result: '{    "Attributes":        {            "BootTypeOrder0": "DVDROMDrive",            "BootTypeOrder1":
+    "HardDiskDrive",            "BootTypeOrder2": "Others",            "BootTypeOrder3":
+    "PXE",        }}'
+  final_result: Success
+  group: 7.7 remote interface management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[]'
+- SN: 42
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios/Settings
+  case_num: 7.7.3 configure boot order
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{    "Attributes":        {            "BootTypeOrder0": "PXE",            "BootTypeOrder1":
+    "HardDiskDrive",            "BootTypeOrder2": "DVDROMDrive",            "BootTypeOrder3":
+    "Others",        }}'
+  final_result: Failure
+  group: 7.7 remote interface management
+  header: null
+  method: PATCH
+  request_body: '{    "Attributes":        {            "BootTypeOrder0": "PXE",            "BootTypeOrder1":
+    "HardDiskDrive",            "BootTypeOrder2": "DVDROMDrive",            "BootTypeOrder3":
+    "Others",        }}'
+- SN: 43
+  URL: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios
+  case_num: 7.7.3 check boot order
+  details_result: '{''count'': ''N/A for this case'', ''info'': []}'
+  expected_code: 200
+  expected_result: '{    "Attributes":        {            "BootTypeOrder0": "PXE",            "BootTypeOrder1":
+    "HardDiskDrive",            "BootTypeOrder2": "DVDROMDrive",            "BootTypeOrder3":
+    "Others",        }}'
+  final_result: Success
+  group: 7.7 remote interface management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[]'
+- SN: 44
+  URL: https://{bmc_ip}{manager_id}
+  case_num: 7.7.4 get BMC version
+  details_result: '{''count'': ''Success'', ''info'': [{''return_code'': ''Success'',
+    ''FirmwareVersion'': ''Failure, expect value: 1.30.11P01 HDM V100R001B03D011SP01,
+    return value: 2.43''}]}'
+  expected_code: 200
+  expected_result: '{"count": 1, "FirmwareVersion": "1.30.11P01 HDM V100R001B03D011SP01"}'
+  final_result: Failure
+  group: 7.7 remote interface management
+  header: null
+  method: GET
+  request_body: null
+  return_code_seq: '[200]'
+- SN: 45
+  URL: https://{bmc_ip}/redfish/v1/AccountService/Accounts/3
+  case_num: 7.7.5 change BMC account
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{"UserName": "CM_cc@1234","RoleId": "Administrator",}'
+  final_result: Failure
+  group: 7.7 remote interface management
+  header: null
+  method: PATCH
+  request_body: '{"UserName": "CM_cc@1234","Password": "1234@CM_cc","RoleId": "Administrator",}'
+- SN: 46
+  URL: https://{bmc_ip}{manager_id}/EthernetInterfaces/eth1
+  case_num: 7.7.6 configure BMC ip in static, ipv4
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{"count": 1,    "IPv4Addresses": [        {            "Address":
+    "192.168.66.120",            "AddressOrigin": "Static",            "Gateway":
+    "192.168.66.1",            "SubnetMask": "255.255.255.128"        }    ]}'
+  final_result: Failure
+  group: 7.7 remote interface management
+  header: null
+  method: PATCH
+  request_body: '{    "IPv4Addresses": [        {            "Address": "192.168.66.120",            "AddressOrigin":
+    "Static",            "Gateway": "192.168.66.1",            "SubnetMask": "255.255.255.128"        }    ]}'
+- SN: 47
+  URL: https://{bmc_ip}{manager_id}/EthernetInterfaces/eth1
+  case_num: 7.7.6 configure BMC ip in DHCP, gateway and subnet mask ipv4
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{"count": 1,    "IPv4Addresses": [        {            "Address":
+    "192.168.66.120",            "AddressOrigin": "DHCP",            "Gateway": "192.168.66.1",            "SubnetMask":
+    "255.255.255.128"        }    ]}'
+  final_result: Failure
+  group: 7.7 remote interface management
+  header: null
+  method: PATCH
+  request_body: '{    "IPv4Addresses": [        {            "AddressOrigin": "DHCP"        }    ]}'
+- SN: 48
+  URL: https://{bmc_ip}{manager_id}/EthernetInterfaces/eth1
+  case_num: 7.7.6 configure BMC ip in static, ipv4
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{"count": 1,    "IPv4Addresses": [        {            "AddressOrigin":
+    "DHCP",        }    ]}'
+  final_result: Failure
+  group: 7.7 remote interface management
+  header: null
+  method: PATCH
+  request_body: '{    "IPv4Addresses": [        {            "AddressOrigin": "DHCP"        }    ]}'
+- SN: 49
+  URL: https://{bmc_ip}{manager_id}/EthernetInterfaces/eth1
+  case_num: 7.7.7 configure BMC ip in static, ipv6
+  details_result: N/A
+  expected_code: 200
+  expected_result: '{"count": 1,    "IPv6Addresses": [        {            "Address":
+    "N/A",            "AddressOrigin": "N/A",            "PrefixLength": 64        },        {            "Address":
+    "2019::11",            "AddressOrigin": "Static",            "PrefixLength": 64        }    ]}'
+  final_result: Failure
+  group: 7.7 remote interface management
+  header: null
+  method: PATCH
+  request_body: '{    "IPv6Addresses": [        {            "Address": "2019::11",            "AddressOrigin":
+    "Static",            "PrefixLength": 64        }    ]}'
