@@ -1,0 +1,17 @@
+---
+bmc_ip: 172.29.160.22
+bmc_user: root
+bmc_pwd: Huawei12#$
+system_id: 1
+chassis_id: 1
+attr_name: 3
+pro_seq: 4
+url_seq: 5
+req_header_seq: 6
+req_body_seq: 7
+expect_return_code_seq: 8
+expect_return_value_seq: 9
+return_code_seq: 10
+return_value_seq: 11
+detail_result: 12
+final_result: 13

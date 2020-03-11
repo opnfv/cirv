@@ -1,0 +1,517 @@
+---
+- case_name: set asset code
+  case_sn: 1
+  expected_code: 200
+  expected_result: '{"AssetTag": "CM_cc@1234"}'
+  group: asset managment
+  header: null
+  method: PATCH
+  request_body: '{"AssetTag": "CM_cc@1234"}'
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+- case_name: get asset code
+  case_sn: 2
+  expected_code: 200
+  expected_result: '{"AssetTag": "CM_cc@1234"}'
+  group: asset managment
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+- case_name: set host name
+  case_sn: 3
+  expected_code: 200
+  expected_result: '{"HostName": "NFV-RPZJHZ-01B"}'
+  group: asset managment
+  header: null
+  method: PATCH
+  request_body: '{"HostName": "NFV-RPZJHZ-01B"}'
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+- case_name: check host name
+  case_sn: 4
+  expected_code: 200
+  expected_result: '{"HostName": "NFV-RPZJHZ-01B"}'
+  group: asset managment
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+- case_name: check manufacturer
+  case_sn: 5
+  expected_code: 200
+  expected_result: '{"Manufacturer": "New H3C Technologies Co., Ltd."}'
+  group: asset managment
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+- case_name: check model
+  case_sn: 6
+  expected_code: 200
+  expected_result: '{"Model": "UniServer R4900 G3"}'
+  group: asset managment
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+- case_name: check serial number
+  case_sn: 7
+  expected_code: 200
+  expected_result: '{"SerialNumber": "N/A"}'
+  group: asset managment
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+- case_name: check main board name
+  case_sn: 8
+  expected_code: 200
+  expected_result: '{"Oem":{"Mainboard": {"BoardName": "RS33M2C9S"}}}'
+  group: asset managment
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Chassis/{chassis_id}
+- case_name: check main board serial number
+  case_sn: 9
+  expected_code: 200
+  expected_result: '{"Oem": {"Mainboard": {"SerialNumber": "N/A"}}}'
+  group: asset managment
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Chassis/{chassis_id}
+- case_name: check BIOS version
+  case_sn: 10
+  expected_code: 200
+  expected_result: '{"BiosVersion": "2.00.35P01 V100R001B02D035SP01"}'
+  group: asset managment
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+- case_name: check CPU amount
+  case_sn: 11
+  expected_code: 200
+  expected_result: '{"Members@odata.count": 2}'
+  group: compoment management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Processors
+- case_name: check CPU info
+  case_sn: 12
+  expected_code: 200
+  expected_result: '{    "count": 2,    "Manufacturer": "Intel(R) Corporation",    "MaxSpeedMHz":
+    2300,    "Model": "Intel(R) Xeon(R) Gold 5218N CPU @ 2.30GHz",    "ProcessorArchitecture":
+    ["x86", "IA-64", "ARM", "MIPS", "OEM"],    "Socket": [1, 2],    "Status": {        "Health":
+    "OK",        "State": "Enabled"    },    "TotalCores": 16,    "TotalThreads":
+    32}'
+  group: compoment management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}{cpu_id}
+- case_name: check memory mount
+  case_sn: 13
+  expected_code: 200
+  expected_result: '{"Members@odata.count": 12}'
+  group: compoment management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Memory
+- case_name: check memory information
+  case_sn: 14
+  expected_code: 200
+  expected_result: '{    "count": 12,    "BaseModuleType": "RDIMM",    "CapacityMiB":
+    32768,    "DeviceLocator": "N/A",    "Manufacturer": ["Hynix Semiconductor", "Micron"],    "MemoryDeviceType":
+    "DDR4",    "OperatingSpeedMhz": 2666,    "PartNumber": ["HMA84GR7AFR4N-VK","36ASF4G72PZ-2G6D1"],    "Status":
+    {        "Health": "OK",        "State": "Enabled"    }}'
+  group: compoment management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}{memory_id}
+- case_name: check raid card amount
+  case_sn: 15
+  expected_code: 200
+  expected_result: '{"Members@odata.count": 1}'
+  group: compoment management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Storages
+- case_name: check raid card information
+  case_sn: 16
+  expected_code: 200
+  expected_result: '{    "count": 1,    "StorageControllers": [        {            "FirmwareVersion":
+    "2.62",            "Manufacturer": "H3C",            "Model": "N/A",            "Status":
+    {                "Health": "OK",                "State": "Enabled"            }        }    ]}'
+  group: compoment management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}{storage_id}
+- case_name: check harddisk information
+  case_sn: 17
+  expected_code: 200
+  expected_result: '{    "count": 4,    "CapacityBytes": [480102187008, 960193626112],    "Location":
+    {        "Info": "N/A",        "InfoFormat": "DeviceName"    },    "Manufacturer":
+    "ATA",    "MediaType": "SSD",    "Model": ["INTEL SSDSC2KB48", "INTEL SSDSC2KB96"],    "Protocol":
+    "SATA",    "Status": {        "Health": "OK",        "State": "Enabled"    }}'
+  group: compoment management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}{drives_id}
+- case_name: check network interface adapter information
+  case_sn: 18
+  expected_code: 200
+  expected_result: '{   "count": 3,    "Manufacturer": "Mellanox",    "Model": "NIC-620F-B2-25Gb-2P-1-X",    "Name":
+    ["PCIeSlot2", "PCIeSlot3", "PCIeSlot6"],    "Oem": {        "Public": {            "CardModel":
+    "2*25GE",            "RootBDF": ["0000:17:00.0", "0000:17:02.0", "0000:AE:02.0"],        }    },    "Status":
+    {        "Health": "OK",        "State": "Enabled"    }}'
+  group: compoment management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}{networkadapters_id}
+- case_name: check network interface adapter port information
+  case_sn: 19
+  expected_code: 200
+  expected_result: '{    "count": 6,    "AssociatedNetworkAddresses": [        "N/A"    ],    "Oem":
+    {        "Public": {            "BDF": "N/A",            "PortType": "OpticalPort"        }    },    "PhysicalPortNumber":
+    ["1", "2"]}'
+  group: compoment management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}{networkports_id}
+- case_name: check fans information
+  case_sn: 20
+  expected_code: 200
+  expected_result: '{    "FanSummary": {        "Count": 6    },    "Fans": [        {            "MemberId":
+    "N/A",            "Oem": {                "Public": {                    "SpeedRatio":
+    "N/A"                }            },            "Status": {                "Health":
+    "OK",                "State": "Enabled"            }        },        {            "MemberId":
+    "N/A",            "Oem": {                "Public": {                    "SpeedRatio":
+    "N/A"                }            },            "Status": {                "Health":
+    "OK",                "State": "Enabled"            }        },{            "MemberId":
+    "N/A",            "Oem": {                "Public": {                    "SpeedRatio":
+    "N/A"                }            },            "Status": {                "Health":
+    "OK",                "State": "Enabled"            }        },{            "MemberId":
+    "N/A",            "Oem": {                "Public": {                    "SpeedRatio":
+    "N/A"                }            },            "Status": {                "Health":
+    "OK",                "State": "Enabled"            }        },{            "MemberId":
+    "N/A",            "Oem": {                "Public": {                    "SpeedRatio":
+    "N/A"                }            },            "Status": {                "Health":
+    "OK",                "State": "Enabled"            }        },{            "MemberId":
+    "N/A",            "Oem": {                "Public": {                    "SpeedRatio":
+    "N/A"                }            },            "Status": {                "Health":
+    "OK",                "State": "Enabled"            }        }    ],}'
+  group: compoment management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Chassis/{chassis_id}/Thermal
+- case_name: check power amount
+  case_sn: 21
+  expected_code: 200
+  expected_result: '{ "DeviceMaxNum": {    "PowerSupplyNum": 2},}'
+  group: compoment management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Chassis/{chassis_id}
+- case_name: check power detail info
+  case_sn: 22
+  expected_code: 200
+  expected_result: '{    "PowerControl": [        {            "PowerConsumedWatts":
+    "N/A","Status":{                "Health": "OK",                "State": "Enabled"            }        },    ],    "PowerSupplies":
+    [        {            "LineInputVoltage": "N/A",            "MemberId": "1",            "PowerCapacityWatts":
+    800,"Status": {                "Health": "OK",                "State": "Enabled"            }        },        {            "LineInputVoltage":
+    "N/A",            "MemberId": "2",            "PowerCapacityWatts": 800,"Status":
+    {                "Health": "OK",                "State": "Enabled"            }        }    ],}'
+  group: compoment management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Chassis/{chassis_id}/Power
+- case_name: check logical dirve health status
+  case_sn: 23
+  expected_code: 200
+  expected_result: '{    "count": 2,    "Name": "N/A",    "Status": {        "Health":
+    ["OK", "Critical"],        "State": "Enabled"    }}'
+  group: compoment management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}{volume_id}
+- case_name: check server temperature air intake
+  case_sn: 24
+  expected_code: 200
+  expected_result: '{    "Temperatures": [        {            "Name": "INPUT_TEMP",            "ReadingCelsius":
+    "N/A",        }    ]}'
+  group: sensor management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Chassis/{chassis_id}/Thermal
+- case_name: check cpu temperature
+  case_sn: 25
+  expected_code: 200
+  expected_result: '{    "Temperatures": [        {            "Name": "INPUT_TEMP",            "ReadingCelsius":
+    "N/A",        },        {            "Name": "CPU1_TEMP",            "ReadingCelsius":
+    "N/A",        },        {            "Name": "CPU2_TEMP",            "ReadingCelsius":
+    "N/A",        },        ]}'
+  group: sensor management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Chassis/{chassis_id}/Thermal
+- case_name: check server power state
+  case_sn: 26
+  expected_code: 200
+  expected_result: '{"PowerState": "On"}'
+  group: power management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}
+- case_name: remote power on server
+  case_sn: 27
+  expected_code: 200
+  expected_result: '{"error":{"@Message.ExtendedInfo": [{"Message": "Successfully
+    Completed Request", "Severity":"OK"}]}}'
+  group: power management
+  header: null
+  method: POST
+  request_body: '{"ResetType": "On"}'
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Actions/ComputerSystem.Reset
+- case_name: remote power off server
+  case_sn: 28
+  expected_code: 200
+  expected_result: '{"error":{"@Message.ExtendedInfo": [{"Message": "Successfully
+    Completed Request", "Severity":"OK"}]}}'
+  group: power management
+  header: null
+  method: POST
+  request_body: '{"ResetType": "GracefulShutdown"}'
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Actions/ComputerSystem.Reset
+- case_name: remote reset server
+  case_sn: 29
+  expected_code: 200
+  expected_result: '{"error":{"@Message.ExtendedInfo": [{"Message": "Successfully
+    Completed Request", "Severity":"OK"}]}}'
+  group: power management
+  header: null
+  method: POST
+  request_body: '{"ResetType": "ForceRestart"}'
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Actions/ComputerSystem.Reset
+- case_name: remote configure CPU in hyperthreading disabled
+  case_sn: 30
+  expected_code: 200
+  expected_result: '{"Attributes": {"ProcessorHyperThreading": "Disabled"}}'
+  group: remote configure
+  header: null
+  method: PATCH
+  request_body: '{  "Attributes":    {    "ProcessorHyperThreading": "Disabled"    }}'
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios/Settings
+- case_name: remote get CPU hyperthreading in disabled
+  case_sn: 31
+  expected_code: 200
+  expected_result: '{"Attributes": {"ProcessorHyperThreading": "Disabled"}}'
+  group: remote configure
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios
+- case_name: remote configure CPU in hyperthreading enabled
+  case_sn: 32
+  expected_code: 200
+  expected_result: '{"Attributes": {"ProcessorHyperThreading": "Enabled"}}'
+  group: remote configure
+  header: null
+  method: PATCH
+  request_body: '{  "Attributes":    {    "ProcessorHyperThreading": "Enabled"    }}'
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios/Settings
+- case_name: remote get CPU hyperthreading in enabled
+  case_sn: 33
+  expected_code: 200
+  expected_result: '{"Attributes": {"ProcessorHyperThreading": "Enabled"}}'
+  group: remote configure
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios
+- case_name: disable PXE mode
+  case_sn: 34
+  expected_code: 200
+  expected_result: '{  "Attributes":    {    "IPv4PXESupport": "Disabled"    }}'
+  group: remote configure
+  header: null
+  method: PATCH
+  request_body: '{  "Attributes":    {    "IPv4PXESupport": "Disabled"    }}'
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios/Settings
+- case_name: check IPV4 PXE mode in disabled
+  case_sn: 35
+  expected_code: 200
+  expected_result: '{  "Attributes":    {    "IPv4PXESupport": "Disabled"    }}'
+  group: remote configure
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios
+- case_name: enable PXE mode
+  case_sn: 36
+  expected_code: 200
+  expected_result: '{  "Attributes":    {    "IPv4PXESupport": "Enabled"    }}'
+  group: remote configure
+  header: null
+  method: PATCH
+  request_body: '{  "Attributes":    {    "IPv4PXESupport": "Enabled"    }}'
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios/Settings
+- case_name: check  ipv4 PXE mode in enabled
+  case_sn: 37
+  expected_code: 200
+  expected_result: '{  "Attributes":    {    "IPv4PXESupport": "Enabled"    }}'
+  group: remote configure
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios
+- case_name: set boot type order
+  case_sn: 38
+  expected_code: 200
+  expected_result: '{    "Attributes":        {            "BootTypeOrder0": "HardDiskDrive",            "BootTypeOrder1":
+    "DVDROMDrive",            "BootTypeOrder2": "PXE",            "BootTypeOrder3":
+    "Others",        }}'
+  group: remote interface management
+  header: null
+  method: PATCH
+  request_body: '{    "Attributes":        {            "BootTypeOrder0": "HardDiskDrive",            "BootTypeOrder1":
+    "DVDROMDrive",            "BootTypeOrder2": "PXE",            "BootTypeOrder3":
+    "Others",        }}'
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios/Settings
+- case_name: check boot order
+  case_sn: 39
+  expected_code: 200
+  expected_result: '{    "Attributes":        {            "BootTypeOrder0": "HardDiskDrive",            "BootTypeOrder1":
+    "DVDROMDrive",            "BootTypeOrder2": "PXE",            "BootTypeOrder3":
+    "Others",        }}'
+  group: remote interface management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios
+- case_name: configure boot order
+  case_sn: 40
+  expected_code: 200
+  expected_result: '{    "Attributes":        {            "BootTypeOrder0": "DVDROMDrive",            "BootTypeOrder1":
+    "HardDiskDrive",            "BootTypeOrder2": "Others",            "BootTypeOrder3":
+    "PXE",        }}'
+  group: remote interface management
+  header: null
+  method: PATCH
+  request_body: '{    "Attributes":        {            "BootTypeOrder0": "DVDROMDrive",            "BootTypeOrder1":
+    "HardDiskDrive",            "BootTypeOrder2": "Others",            "BootTypeOrder3":
+    "PXE",        }}'
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios/Settings
+- case_name: check boot order
+  case_sn: 41
+  expected_code: 200
+  expected_result: '{    "Attributes":        {            "BootTypeOrder0": "DVDROMDrive",            "BootTypeOrder1":
+    "HardDiskDrive",            "BootTypeOrder2": "Others",            "BootTypeOrder3":
+    "PXE",        }}'
+  group: remote interface management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios
+- case_name: configure  new boot PXE order first
+  case_sn: 42
+  expected_code: 200
+  expected_result: '{    "Attributes":        {            "BootTypeOrder0": "PXE",            "BootTypeOrder1":
+    "HardDiskDrive",            "BootTypeOrder2": "DVDROMDrive",            "BootTypeOrder3":
+    "Others",        }}'
+  group: remote interface management
+  header: null
+  method: PATCH
+  request_body: '{    "Attributes":        {            "BootTypeOrder0": "PXE",            "BootTypeOrder1":
+    "HardDiskDrive",            "BootTypeOrder2": "DVDROMDrive",            "BootTypeOrder3":
+    "Others",        }}'
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios/Settings
+- case_name: check boot order PEX order first
+  case_sn: 43
+  expected_code: 200
+  expected_result: '{    "Attributes":        {            "BootTypeOrder0": "PXE",            "BootTypeOrder1":
+    "HardDiskDrive",            "BootTypeOrder2": "DVDROMDrive",            "BootTypeOrder3":
+    "Others",        }}'
+  group: remote interface management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}/redfish/v1/Systems/{system_id}/Bios
+- case_name: check BMC Firmware version
+  case_sn: 44
+  expected_code: 200
+  expected_result: '{"count": 1, "FirmwareVersion": "1.30.11P01 HDM V100R001B03D011SP01"}'
+  group: remote interface management
+  header: null
+  method: GET
+  request_body: null
+  url: https://{bmc_ip}{manager_id}
+- case_name: change BMC account
+  case_sn: 45
+  expected_code: 200
+  expected_result: '{"UserName": "CM_cc@1234","RoleId": "Administrator",}'
+  group: remote interface management
+  header: null
+  method: PATCH
+  request_body: '{"UserName": "CM_cc@1234","Password": "1234@CM_cc","RoleId": "Administrator",}'
+  url: https://{bmc_ip}/redfish/v1/AccountService/Accounts/3
+- case_name: configure BMC ip in static, ipv4
+  case_sn: 46
+  expected_code: 200
+  expected_result: '{"count": 1,    "IPv4Addresses": [        {            "Address":
+    "192.168.66.120",            "AddressOrigin": "Static",            "Gateway":
+    "192.168.66.1",            "SubnetMask": "255.255.255.128"        }    ]}'
+  group: remote interface management
+  header: null
+  method: PATCH
+  request_body: '{    "IPv4Addresses": [        {            "Address": "192.168.66.120",            "AddressOrigin":
+    "Static",            "Gateway": "192.168.66.1",            "SubnetMask": "255.255.255.128"        }    ]}'
+  url: https://{bmc_ip}{manager_id}/EthernetInterfaces/eth1
+- case_name: configure BMC ip in DHCP, gateway and subnet mask ipv4
+  case_sn: 47
+  expected_code: 200
+  expected_result: '{"count": 1,    "IPv4Addresses": [        {            "Address":
+    "192.168.66.120",            "AddressOrigin": "DHCP",            "Gateway": "192.168.66.1",            "SubnetMask":
+    "255.255.255.128"        }    ]}'
+  group: remote interface management
+  header: null
+  method: PATCH
+  request_body: '{    "IPv4Addresses": [        {            "AddressOrigin": "DHCP"        }    ]}'
+  url: https://{bmc_ip}{manager_id}/EthernetInterfaces/eth1
+- case_name: configure BMC ip in static, ipv4
+  case_sn: 48
+  expected_code: 200
+  expected_result: '{"count": 1,    "IPv4Addresses": [        {            "AddressOrigin":
+    "DHCP",        }    ]}'
+  group: remote interface management
+  header: null
+  method: PATCH
+  request_body: '{    "IPv4Addresses": [        {            "AddressOrigin": "DHCP"        }    ]}'
+  url: https://{bmc_ip}{manager_id}/EthernetInterfaces/eth1
+- case_name: configure BMC ip in static, ipv6
+  case_sn: 49
+  expected_code: 200
+  expected_result: '{"count": 1,    "IPv6Addresses": [        {            "Address":
+    "N/A",            "AddressOrigin": "N/A",            "PrefixLength": 64        },        {            "Address":
+    "2019::11",            "AddressOrigin": "Static",            "PrefixLength": 64        }    ]}'
+  group: remote interface management
+  header: null
+  method: PATCH
+  request_body: '{    "IPv6Addresses": [        {            "Address": "2019::11",            "AddressOrigin":
+    "Static",            "PrefixLength": 64        }    ]}'
+  url: https://{bmc_ip}{manager_id}/EthernetInterfaces/eth1
