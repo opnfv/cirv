@@ -25,8 +25,6 @@ import os
 import re
 import logging
 import pprint
-import ast
-import netaddr
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -40,6 +38,7 @@ _LOGGER = logging.getLogger(__name__)
 #   #EVAL(2*#VMINDEX)
 _PARSE_PATTERN = r'(#[A-Z]+)(\(([^(),]+)(,([0-9]+))?\))?'
 
+
 class Settings(object):
     """Holding class for settings.
     """
@@ -52,15 +51,22 @@ class Settings(object):
         """
         if isinstance(param, str):
             # evaluate every #PARAM reference inside parameter itself
-            macros = re.findall(r'#PARAM\((([\w\-]+)(\[[\w\[\]\-\'\"]+\])*)\)', param)
+            macros = re.findall(
+                r'#PARAM\((([\w\-]+)(\[[\w\[\]\-\'\"]+\])*)\)',
+                param)
             if macros:
                 for macro in macros:
                     # pylint: disable=eval-used
                     try:
-                        tmp_val = str(eval("self.getValue('{}'){}".format(macro[1], macro[2])))
-                        param = param.replace('#PARAM({})'.format(macro[0]), tmp_val)
-                    # silently ignore that option required by PARAM macro can't be evaluated;
-                    # It is possible, that referred parameter will be constructed during runtime
+                        tmp_val = str(
+                            eval("self.getValue('{}'){}".format(macro[1],
+                                                                macro[2])))
+                        param = param.replace('#PARAM({})'.format(macro[0]),
+                                              tmp_val)
+                    # silently ignore that option required by
+                    # PARAM macro can't be evaluated;
+                    # It is possible, that referred parameter
+                    # will be constructed during runtime
                     # and re-read later.
                     except IndexError:
                         pass
@@ -133,7 +139,8 @@ class Settings(object):
 
         :returns: None
         """
-        regex = re.compile("^(?P<digit_part>[0-9]+)(?P<alfa_part>[a-z]?)_.*.conf$")
+        regex = re.compile(
+            "^(?P<digit_part>[0-9]+)(?P<alfa_part>[a-z]?)_.*.conf$")
 
         def get_prefix(filename):
             """
@@ -223,6 +230,7 @@ class Settings(object):
         """
         assert value == self.__dict__[name]
         return True
+
 
 settings = Settings()
 

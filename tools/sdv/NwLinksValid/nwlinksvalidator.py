@@ -17,6 +17,7 @@ Abstract class for N/W Lnks Prevalidations.
 Implementors, please inherit from this class.
 """
 
+
 class INwLinksValidator():
     """ Model for a Links Validator """
     def __init__(self):

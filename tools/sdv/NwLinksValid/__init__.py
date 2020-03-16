@@ -13,4 +13,5 @@
 """Nework-Links Validator interface and helpers.
 """
 
+# flake8: noqa
 from NwLinksValid.nwlinksvalidator import *

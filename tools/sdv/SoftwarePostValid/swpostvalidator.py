@@ -17,6 +17,7 @@ Abstract class for Software Postvalidations.
 Implementors, please inherit from this class.
 """
 
+
 class ISwPostValidator():
     """ Model for a Sw Validator """
     def __init__(self):

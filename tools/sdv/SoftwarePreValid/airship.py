@@ -25,6 +25,7 @@ import yaml
 from conf import settings
 from SoftwarePreValid import swprevalidator
 
+
 def check_link(link):
     """
     Function the check the availability of Hyperlinks
@@ -52,6 +53,7 @@ def check_link(link):
         print(err.args)
         return False
     return True
+
 
 class Airship(swprevalidator.ISwPreValidator):
     """
@@ -119,8 +121,6 @@ class Airship(swprevalidator.ISwPreValidator):
                 else:
                     print("The Link: %s is INVALID" % (location))
 
-
-
     # pylint: disable=consider-using-enumerate
     def find_locations(self, yamlfile):
         """
@@ -174,16 +174,16 @@ class Airship(swprevalidator.ISwPreValidator):
                                    'maas.yaml')
         with open(os_filename, 'r') as osref:
             osfiles = yaml.load_all(osref, Loader=yaml.FullLoader)
-            for osfile in osfiles:
-                if ('data' in osfile and
-                        'values' in osfile['data'] and
-                        'conf' in osfile['data']['values'] and
-                        'maas' in osfile['data']['values']['conf'] and
-                        'images' in osfile['data']['values']['conf']['maas'] and
+            for osf in osfiles:
+                if ('data' in osf and
+                        'values' in osf['data'] and
+                        'conf' in osf['data']['values'] and
+                        'maas' in osf['data']['values']['conf'] and
+                        'images' in osf['data']['values']['conf']['maas'] and
                         ('default_os' in
-                         osfile['data']['values']['conf']['maas']['images'])):
+                         osf['data']['values']['conf']['maas']['images'])):
                     if (settings.getValue('OPERATING_SYSTEM') in
-                            osfile['data']['values']['conf']['maas']['images'][
+                            osf['data']['values']['conf']['maas']['images'][
                                 'default_os']):
                         print('Operating System is VALID')
                         os_done = True

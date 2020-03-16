@@ -23,6 +23,7 @@ from SoftwarePreValid.swprevalidator import ISwPreValidator
 from SoftwarePostValid.swpostvalidator import ISwPostValidator
 from NwLinksValid.nwlinksvalidator import INwLinksValidator
 
+
 # pylint: disable=too-many-public-methods
 class Loader():
     """Loader class - main object context holder.
