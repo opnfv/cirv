@@ -67,21 +67,21 @@ echo
 
 
 # execute pylint to check code quality
-function execute_cirv_pylint_check() {
+function execute_cirv_pylint_check {
     if ! ./check -b ; then
         EXIT=$EXIT_PYLINT_FAILED
     fi
 }
 
 # verify basic cirv functionality
-function execute_cirv_sanity() {
+function execute_cirv_sanity {
     DATE_SUFFIX=$(date -u +"%Y-%m-%d_%H-%M-%S")
     LOG_FILE="${LOG_FILE_PREFIX}_sanity_${DATE_SUFFIX}.log"
     echo "Execution of CIRV sanity checks:"
     for PARAM in '--version' '--help'; do
-        echo -e "-------------------------------------------------------------------" >> $LOG_FILE
+        echo -e "------------------------------------------------" >> $LOG_FILE
         echo "$SWV_BIN $PARAM " >> $LOG_FILE
-        echo -e "-------------------------------------------------------------------" >> $LOG_FILE
+        echo -e "------------------------------------------------" >> $LOG_FILE
         $SWV_BIN $PARAM &>> $LOG_FILE
         if $SWV_BIN $PARAM &>> $LOG_FILE ; then
             printf "    %-70s %-6s\n" "$SWV_BIN $PARAM" "OK"
@@ -116,7 +116,7 @@ case $1 in
         echo "================"
         echo "CIRV daily job"
         echo "================"
-        
+
         exit $EXIT
         ;;
 esac
