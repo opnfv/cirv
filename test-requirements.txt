@@ -1,2 +1,3 @@
 flake8 # MIT
 yamllint
+bashate # Apache-2.0
