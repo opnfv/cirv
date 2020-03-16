@@ -15,4 +15,5 @@
 """Sw Validator interface and helpers.
 """
 
+# flake8: noqa
 from SoftwarePreValid.swprevalidator import *

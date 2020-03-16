@@ -17,6 +17,7 @@ Abstract class for Software Prevalidations.
 Implementors, please inherit from this class.
 """
 
+
 class ISwPreValidator():
     """ Model for a Sw Validator """
     def __init__(self):

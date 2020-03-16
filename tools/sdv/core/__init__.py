@@ -14,4 +14,6 @@
 
 """Core structural interfaces and their implementations
 """
+
+# flake8: noqa
 import core.component_factory
