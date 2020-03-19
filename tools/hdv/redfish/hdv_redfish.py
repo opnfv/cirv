@@ -29,7 +29,6 @@ ACCOUNT_INFO = {}
 WAIT_INTERVAL = 5
 
 
-
 def parse_config(config_yaml):
     """
     parse setting from config.yaml
@@ -428,8 +427,8 @@ def check_component_cnt(expect_return_value, res_list, result):
         if expect_return_value['count'] == len(res_list):
             result.update({"count": "Success"})
         else:
-            result.update({"count": \
-                           "Failure, the actual num is "+ str(len(res_list))})
+            result.update({"count":
+                           "Failure, the actual num is " + str(len(res_list))})
     else:
         result.update({"count": "N/A for this case"})
     return result
@@ -471,7 +470,7 @@ def parse_test_result(expect_return_value, expect_return_code,
             flag += 1
             continue
 
-        #parse the actual result according to the expected value hierachy.
+        # parse the actual result according to the expected value hierachy.
         ex_value = copy.deepcopy(expect_return_value)
         exp_act_pairs = {}
         for key, value in ex_value.items():
@@ -482,7 +481,7 @@ def parse_test_result(expect_return_value, expect_return_code,
             else:
                 LOGGER.error("%s, %s", ERROR_CODE['E500001'], key)
                 exp_act_pairs[key] = \
-                    (value, "Can't find the key {} in return value".format(key))
+                    (value, "Can't find key {} in return value".format(key))
         LOGGER.debug("real_result:%s", exp_act_pairs)
 
         # comparing expected result with real result.
@@ -525,7 +524,7 @@ def execute_final_url(config_file, depends_id, http_handler,
 def run_test_case_yaml(config_file, case_file, depends_id, http_handler):
     '''run test case from cases.yaml
     '''
-    LOGGER.info("################# start perform test case ###################")
+    LOGGER.info("############### start perform test case #################")
     cases_result = []
     cases = read_yaml(case_file)
     for case in cases:
@@ -556,7 +555,7 @@ def run_test_case_yaml(config_file, case_file, depends_id, http_handler):
 
     write_result_2_yaml(cases_result)
 
-    LOGGER.info("################# end perform test case #####################")
+    LOGGER.info("############### end perform test case ###################")
 
 
 def read_yaml(file):
@@ -573,7 +572,8 @@ def write_result_2_yaml(result):
     write test result to new report.yaml
     '''
     LOGGER.info("writing to yaml file")
-    yaml.dump(result, open("./conf/report.yaml", "w"))
+    yaml.safe_dump(result, open("./conf/report.yaml", "w"),
+                   explicit_start=True)
 
 
 def run_test_case_excel(config_file, case_file, depends_id, http_handler):
@@ -581,7 +581,7 @@ def run_test_case_excel(config_file, case_file, depends_id, http_handler):
     perform the test case one by one,
     and write test final_result back to the excel.
     '''
-    LOGGER.info("################# start perform test case ###################")
+    LOGGER.info("############### start perform test case #################")
     input_file = load_workbook(case_file)
     input_ws = input_file[input_file.sheetnames[0]]
 
@@ -615,7 +615,7 @@ def run_test_case_excel(config_file, case_file, depends_id, http_handler):
             config_file, input_ws, row, flag, final_result)
         row += 1
         input_file.save(case_file)
-    LOGGER.info("################# end perform test case #####################")
+    LOGGER.info("############### end perform test case ###################")
 
 
 def run(conf_file, case_excel_file=None, depend_yaml_file=None,

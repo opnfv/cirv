@@ -23,7 +23,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 HEADERS = {
     'Connection': 'keep-alive',
-    'User-Agent': \
+    'User-Agent':
     'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 \
     (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
 }

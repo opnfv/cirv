@@ -6,6 +6,7 @@ import yaml
 # pylint: disable=E0611
 from log_utils import LOGGER
 
+
 def read_yaml(file):
     '''read a yaml file
     '''
@@ -18,7 +19,6 @@ def read_yaml(file):
 def write_yaml(file, dict_data):
     '''write a yaml file
     '''
-    #yaml.dump(dict_data, open(file, "w"), width = 80)
     yaml.safe_dump(dict_data, open(file, "w"), explicit_start=True)
 
 

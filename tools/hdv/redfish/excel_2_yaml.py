@@ -13,7 +13,7 @@ convert excel config to yaml format config: depends.yaml and cases.yaml.
 import os
 import yaml
 from openpyxl.reader.excel import load_workbook
-#pylint: disable=E0611
+# pylint: disable=E0611
 from log_utils import LOGGER
 
 
@@ -44,6 +44,7 @@ def load_sheet(excel_file, sheet_index, start_col, end_col):
 
     LOGGER.info(rows_list)
     return rows_list
+
 
 def create_yaml(id_dict, yaml_file):
     '''

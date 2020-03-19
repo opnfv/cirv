@@ -1,3 +1,4 @@
+---
 - case_name: set asset code
   case_sn: 1
   details_result: '{''count'': ''N/A for this case'', ''info'': [{''return_code'':
