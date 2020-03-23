@@ -65,6 +65,10 @@ committers:
       email: 'fuqiao@chinamobile.com'
       company: 'chinamobile.com'
       id: 'fuqiao'
+    - name: 'Chen Liang'
+      email: 'chenliangyjy@chinamobile.com'
+      company: 'chinamobile.com'
+      id: 'chenliangyjy'
 tsc:
     approval: 'http://ircbot.wl.linuxfoundation.org/meetings/opnfv-meeting/2019/opnfv-meeting.2019-09-17-13.01.log.html'
     changes:
