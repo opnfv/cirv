@@ -21,7 +21,7 @@ hdv tools
    e.g a case for checking port, should get networkadaptor_id before that.
 '''
 import argparse
-from hdv_redfish import run as run_case
+from redfish.hdv_redfish import run as run_case
 
 
 def parse_args():

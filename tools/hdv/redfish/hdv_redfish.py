@@ -18,7 +18,7 @@ import copy
 from ast import literal_eval
 import yaml
 from openpyxl.reader.excel import load_workbook
-from http_handler import UrllibHttpHandler, HEADERS
+from redfish.http_handler import UrllibHttpHandler, HEADERS
 # pylint: disable=E0611
 from log_utils import BASE_DIR, LOG_FILE, LOGGER
 from errors import ERROR_CODE, WARN_CODE
