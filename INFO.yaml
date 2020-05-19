@@ -33,10 +33,6 @@ repositories:
     - 'cirv'
 committers:
     - <<: *opnfv_cirv_ptl
-    - name: 'Cedric Ollivier'
-      email: 'cedric.ollivier@orange.com'
-      company: 'orange.com'
-      id: 'ollivier'
     - name: 'Trevor Cooper'
       email: 'trevor.cooper@intel.com'
       company: 'intel.com'
