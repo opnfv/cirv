@@ -4,19 +4,19 @@ project_creation_date: '2019-09-17'
 project_category: 'Integration and Testing'
 lifecycle_state: 'Incubation'
 project_lead: &opnfv_cirv_ptl
-    name: 'Chen Liang'
-    email: 'chenliangyjy@chinamobile.com'
-    company: 'chinamobile.com'
-    id: 'chenliangyjy'
-    timezone: 'CST'
+    name: 'Parth Yadav'
+    email: 'parthyadav3105@gmail.com'
+    company: 'du.ac.in'
+    id: 'parthyadav'
+    timezone: 'IST'
 primary_contact: *opnfv_cirv_ptl
 issue_tracking:
     type: 'jira'
-    url: 'https://jira.opnfv.org/projects/CIRV'
+    url: 'https://jira.anuket.io/projects/CIRV'
     key: 'CIRV'
 mailing_list:
     type: 'groups.io'
-    url: 'opnfv-tech-discuss@lists.opnfv.org'
+    url: 'anuket-tech-discuss@lists.anuket.io'
     tag: '[CIRV]'
 realtime_discussion:
     type: irc
@@ -25,12 +25,15 @@ realtime_discussion:
 meetings:
     - type: 'Zoom'
       # yamllint disable rule:line-length
-      agenda: 'https://wiki.lfnetworking.org/pages/viewpage.action?pageId=25364128'
-      url: https://zoom.us/j/694881078
+      agenda: https://wiki.anuket.io/display/HOME/2021+Meeting+Minutes
+      # 2019-20 minutes: 'https://wiki.lfnetworking.org/pages/viewpage.action?pageId=25364128'
+      url: https://zoom.us/j/95106311750
       repeats: 'weekly'
-      time: 'Wed 1300-1400 UTC'
+      time: 'Wed 0830-0930 UTC'
 repositories:
     - 'cirv'
+    - 'cirv-sdv'
+    - 'cirv-hdv'
 committers:
     - <<: *opnfv_cirv_ptl
     - name: 'Trevor Cooper'
@@ -53,6 +56,10 @@ committers:
       email: 'chenliangyjy@chinamobile.com'
       company: 'chinamobile.com'
       id: 'chenliangyjy'
+    - name: 'Parth Yadav'
+      email: 'parthyadav3105@gmail.com'
+      company: 'du.ac.in'
+      id: 'parthyadav'
 tsc:
     approval: 'http://ircbot.wl.linuxfoundation.org/meetings/opnfv-meeting/2019/opnfv-meeting.2019-09-17-13.01.log.html'
     changes:
