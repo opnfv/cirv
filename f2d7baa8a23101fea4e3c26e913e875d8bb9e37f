@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c272da4_a23da6c1",
+        "filename": "INFO.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2021-08-18T22:25:16Z",
+      "side": 1,
+      "message": "You don\u0027t need to include yourself here as the PTL, as that\u0027s already done by `- \u003c\u003c: *opnfv_cirv_ptl`",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 22
+      },
+      "revId": "f2d7baa8a23101fea4e3c26e913e875d8bb9e37f",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": true
+    }
+  ]
+}
